@@ -18,8 +18,8 @@ SMTP_USERNAME = st.secrets.get("SMTP_USERNAME")
 SMTP_PASSWORD = st.secrets.get("SMTP_PASSWORD")
 
 # Streamlit UI setup
-st.set_page_config(page_title="Trauma Presentation Feeback Bot", page_icon="🩺", layout="centered")
-st.title("🩺 Trauma Presentation Feeback Bot")
+st.set_page_config(page_title="ATLS Patient 'M' Feeback Bot", page_icon="🩺", layout="centered")
+st.title("🩺 ATLS Patient 'M' bot")
 st.markdown("Record or upload a presentation to receive AI-based feedback, edit it, and send to your student.")
 st.warning(
     "⚠️ Do not present Personal Health Information (PHI) or patient identifying features in the presentation."
@@ -45,11 +45,11 @@ if audio_file:
         st.text_area("Transcribed Text", transcribed_text, height=200)
 
         # AI feedback
-        st.info("Generating feedback from Dr. Al (AI trauma presentation coach)...")
+        st.info("Generating feedback from Dr. Al (ATLS presentation coach)...")
 
         if st.session_state.ai_feedback is None:
             messages = [
-                {"role": "system", "content": """“Trauma Presentation Feedback Bot”
+                {"role": "system", "content": """“ATLS Feedback Bot”
 
 You are Dr. Al, an expert trauma surgeon chatbot that helps medical students improve trauma case presentations. You are a positive a supportive mentor that avoids negative tones in the feedback. 
     Give supportive and constructive based on ATLS 11th edition principles. Use the following evaluation grid to assess the student's performance.
